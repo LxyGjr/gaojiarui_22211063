@@ -1,0 +1,161 @@
+/* Reset default margins and ensure box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the body takes the full viewport height */
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack top and bottom sections vertically */
+    background-color: #f0f0f0; /* Light background for contrast */
+    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
+}
+
+/* Main container for top and bottom sections */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+}
+
+/* Top section styling */
+.top-section {
+    background-color: #2196F3; /* Blue for visibility */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    flex: 0 0 auto; /* Fixed height based on content */
+}
+
+/* Bottom section container for the original three-part layout */
+.bottom-section {
+    flex: 1; /* Takes remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center content vertically and horizontally */
+}
+
+/* Container for the three parts (original .container) */
+.three-part-container {
+    display: flex;
+    flex-direction: row; /* Explicitly set to row for horizontal layout */
+    align-items: flex-start; /* Align items at the top */
+    justify-content: center; /* Center the content horizontally */
+    min-width: 1260px; /* Minimum width: 300 + 20 + 600 + 20 + 300 = 1240px + 20px padding */
+    padding: 20px; /* Padding around the container */
+}
+
+/* Center block styling */
+.center-block {
+    width: 600px;
+    height: 600px;
+    background-color: #4CAF50; /* Green for visibility */
+    flex: 0 0 600px; /* Fixed width, no shrinking or growing */
+}
+
+/* Left and right iframe styling */
+.left-iframe,
+.right-iframe {
+    width: 300px; /* Fixed width for iframes */
+    height: 600px; /* Same height as center block */
+    flex: 0 0 300px; /* Fixed width, no shrinking or growing */
+    border: 1px solid #ccc; /* Light border for visibility */
+    background-color: #fff; /* White background for text readability */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Padding between elements */
+.left-iframe {
+    margin-right: 20px; /* Padding between left iframe and center block */
+}
+
+.right-iframe {
+    margin-left: 20px; /* Padding between center block and right iframe */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1280px) {
+    .three-part-container {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center; /* Center items vertically */
+        min-width: 0; /* Remove minimum width constraint */
+        width: 100%; /* Full width */
+    }
+
+    .left-iframe,
+    .right-iframe {
+        width: 600px; /* Match center block width for consistency */
+        margin: 20px 0; /* Vertical spacing between elements */
+    }
+
+    .left-iframe {
+        margin-right: 0; /* Remove horizontal margin in column layout */
+    }
+
+    .right-iframe {
+        margin-left: 0; /* Remove horizontal margin in column layout */
+    }
+}
+
+/* Style the top-section as a flex container */
+.top-section {
+    display: flex;
+    justify-content: space-between; /* Pushes top-heading left and menu right */
+    align-items: center; /* Vertically centers top-heading and menu */
+    padding: 1rem; /* Adds some spacing around the section */
+}
+
+/* Style the top-heading (h1) */
+.top-heading {
+    font-size: 2rem; /* Adjust size as needed */
+}
+
+/* Style the menu */
+.menu ul {
+    display: flex; /* Makes menu items horizontal */
+    list-style: none; /* Removes default bullets */
+}
+
+.menu li {
+    margin-left: 1rem; /* Space between menu items */
+}
+
+.menu a {
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* White for visibility against blue background */
+    font-size: 1rem; /* Adjust size as needed */
+}
+
+.menu a:hover {
+    color: #ccc; /* Light gray on hover for contrast, adjust as needed */
+}
+
+/* Style the about-section */
+.about-section {
+    padding: 2rem; /* Spacing around content */
+    max-width: 800px; /* Limits width for readability */
+    margin: 0 auto; /* Centers the content */
+}
+
+.about-section h2 {
+    font-size: 1.5rem; /* Slightly smaller than top-heading */
+    margin-bottom: 1rem; /* Space below heading */
+}
+
+.about-section p {
+    margin-bottom: 1rem; /* Space between paragraphs */
+}
+
+.about-section a {
+    color: #007bff; /* Blue for links, matches hover color of menu */
+    text-decoration: none;
+}
+
+.about-section a:hover {
+    text-decoration: underline; /* Underline on hover for clarity */
+}
+
